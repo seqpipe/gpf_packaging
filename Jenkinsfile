@@ -27,40 +27,40 @@ pipeline {
                 )
             }
         }
-                    // rm -rf gpf
-                    // rm -rf gpfjs
 
         stage('clean') {
             steps {
                 sh '''
                     rm -rf builds
+                    rm -rf gpf
+                    rm -rf gpfjs
                 '''
             }
         }
 
-        // stage('gpf & gpfjs source') {
-        //     steps {
-        //         sh '''
-        //             ./jenkins_source.sh
-        //         '''
-        //     }
-        // }
+        stage('gpf & gpfjs source') {
+            steps {
+                sh '''
+                    ./jenkins_source.sh
+                '''
+            }
+        }
 
-        // stage('gpfjs build') {
-        //     steps {
-        //         sh '''
-        //             ./jenkins_build_gpfjs.sh
-        //         '''
-        //     }
-        // }
+        stage('gpfjs build') {
+            steps {
+                sh '''
+                    ./jenkins_build_gpfjs.sh
+                '''
+            }
+        }
 
-        // stage('django gpfjs build') {
-        //     steps {
-        //         sh '''
-        //             ./jenkins_django_gpfjs.sh
-        //         '''
-        //     }
-        // }
+        stage('django gpfjs build') {
+            steps {
+                sh '''
+                    ./jenkins_django_gpfjs.sh
+                '''
+            }
+        }
 
         stage('package gpf') {
             steps {
