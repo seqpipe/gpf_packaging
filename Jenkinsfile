@@ -10,8 +10,8 @@ pipeline {
         cron('@weekly')
     }
     parameters {
-        booleanParam(name: 'GPF_BRANCH', defaultValue: "master", description: 'gpf git branch to package')
-        booleanParam(name: 'GPFJS_BRANCH', defaultValue: "master", description: 'gpfjs git branch to package')
+        string(name: 'GPF_BRANCH', defaultValue: "master", description: 'gpf git branch to package')
+        string(name: 'GPFJS_BRANCH', defaultValue: "master", description: 'gpfjs git branch to package')
     }    
     environment {
         GPF_BRANCH="master"
@@ -27,15 +27,16 @@ pipeline {
                 )
             }
         }
-        // // stage('clean') {
-        // //     steps {
-        // //         sh '''
-        // //             rm -rf gpf
-        // //             rm -rf gpfjs
-        // //             rm -rf builds
-        // //         '''
-        // //     }
-        // // }
+                    // rm -rf gpf
+                    // rm -rf gpfjs
+
+        stage('clean') {
+            steps {
+                sh '''
+                    rm -rf builds
+                '''
+            }
+        }
 
         // stage('gpf & gpfjs source') {
         //     steps {
