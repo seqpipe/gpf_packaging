@@ -46,7 +46,7 @@ pipeline {
         stage('gpfjs build') {
             steps {
                 sh '''
-                    ./jenkins_gpfjs.sh
+                    ./jenkins_build_gpfjs.sh
                 '''
             }
         }
