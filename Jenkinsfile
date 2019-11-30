@@ -28,15 +28,16 @@ pipeline {
             }
         }
 
-        // stage('clean') {
-        //     steps {
-        //         sh '''
-        //             rm -rf builds
-        //             rm -rf gpf
-        //             rm -rf gpfjs
-        //         '''
-        //     }
-        // }
+                    // rm -rf gpf
+                    // rm -rf gpfjs
+
+        stage('clean') {
+            steps {
+                sh '''
+                    rm -rf builds
+                '''
+            }
+        }
 
         // stage('gpf & gpfjs source') {
         //     steps {
