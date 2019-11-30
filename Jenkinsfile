@@ -39,45 +39,46 @@ pipeline {
             }
         }
 
-        // stage('gpf & gpfjs source') {
-        //     steps {
-        //         sh '''
-        //             ./jenkins_source.sh
-        //         '''
-        //     }
-        // }
+        stage('gpf & gpfjs source') {
+            steps {
+                sh '''
+                    ./jenkins_source.sh
+                '''
+            }
+        }
 
-        // stage('gpfjs build') {
-        //     steps {
-        //         sh '''
-        //             ./jenkins_build_gpfjs.sh
-        //         '''
-        //     }
-        // }
+        stage('gpfjs build') {
+            steps {
+                sh '''
+                    ./jenkins_build_gpfjs.sh
+                '''
+            }
+        }
 
-        // stage('django gpfjs build') {
-        //     steps {
-        //         sh '''
-        //             ./jenkins_django_gpfjs.sh
-        //         '''
-        //     }
-        // }
+        stage('django gpfjs build') {
+            steps {
+                sh '''
+                    ./jenkins_django_gpfjs.sh
+                '''
+            }
+        }
 
         stage('package gpf') {
             steps {
                 sh '''
                     ./jenkins_gpf_package.sh
                 '''
+
             }
         }
 
-        // stage('tag repos') {
-        //     steps {
-        //         sh '''
-        //             ./jenkins_tag.sh
-        //         '''
-        //     }
-        // }
+        stage('tag repos') {
+            steps {
+                sh '''
+                    ./jenkins_tag.sh
+                '''
+            }
+        }
 
     }
     post {
