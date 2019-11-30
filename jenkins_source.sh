@@ -18,7 +18,7 @@ cd gpf
 rm -rf wdae/wdae/gpfjs/
 
 git checkout -f ${PY_BRANCH}
-git pull origin ${PY_BRANCH}
+git pull
 
 cd -
 
@@ -31,6 +31,6 @@ fi
 cd gpfjs
 
 git checkout -f ${JS_BRANCH}
-git pull origin ${JS_BRANCH}
+git pull
 
 cd -
