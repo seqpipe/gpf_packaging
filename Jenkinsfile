@@ -32,6 +32,7 @@ pipeline {
         // //         sh '''
         // //             rm -rf gpf
         // //             rm -rf gpfjs
+        // //             rm -rf builds
         // //         '''
         // //     }
         // // }
@@ -79,6 +80,8 @@ pipeline {
     }
     post {
         success {
+            archiveArtifacts artifacts: 'builds/*.tar.gz'
+
             slackSend (
                 color: '#00FF00',
                 message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ${env.BUILD_URL}"

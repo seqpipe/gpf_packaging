@@ -31,3 +31,4 @@ export VERSION=$VERSION$BUILD
 
 echo "VERSION: ${VERSION}"
 
+export GPF_PACKAGE="gpf-${PY_BRANCH}-${JS_BRANCH}-${VERSION}.tar.gz"
