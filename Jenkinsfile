@@ -72,6 +72,15 @@ pipeline {
             }
         }
 
+        stage('build gpf development docker image') {
+            steps {
+                sh '''
+                    ./jenkins_docker_build_image.sh
+                '''
+
+            }
+        }
+
         stage('tag repos') {
             steps {
                 sh '''

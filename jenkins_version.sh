@@ -24,7 +24,7 @@ fi
 
 export BUILD=${BUILD_NUMBER:-}
 if [ -z $BUILD ]; then
-    export BUILD=1111
+    export BUILD=1
 fi
 
 export VERSION=$VERSION$BUILD
@@ -32,3 +32,5 @@ export VERSION=$VERSION$BUILD
 echo "VERSION: ${VERSION}"
 
 export GPF_PACKAGE="gpf-${PY_BRANCH}-${JS_BRANCH}-${VERSION}.tar.gz"
+export GPF_DOCKER_IMAGE="seqpipe/gpf_dev_${PY_BRANCH}_${JS_BRANCH}:${BUILD}"
+
