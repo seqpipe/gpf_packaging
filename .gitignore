@@ -3,3 +3,4 @@ gpfjs/
 builds/
 data/
 conda-environment.yml
+gpf-*.tar.gz
