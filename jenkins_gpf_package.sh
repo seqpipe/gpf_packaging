@@ -5,8 +5,8 @@ set -e
 source ./jenkins_version.sh
 
 echo "version: ${VERSION}"
-mkdir -p builds
+mkdir -p ${BUILDS}
 
-tar zcvf builds/${GPF_PACKAGE} \
+tar zcvf ${BUILDS}/${GPF_PACKAGE} \
     --exclude .git \
     gpf/
