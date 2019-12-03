@@ -1,6 +1,5 @@
 FROM seqpipe/seqpipe-node-base:latest
 
-ARG WD="./"
 ARG GPF_PACKAGE="gpf-master-master-3.0.0dev1.tar.gz"
 
 
@@ -24,7 +23,7 @@ ENV HADOOP_CONF_DIR /opt/conda/envs/gpf/etc/hadoop
 
 # GPF
 RUN mkdir -p /code
-COPY ${WD}/${GPF_PACKAGE} /
+COPY ./${GPF_PACKAGE} /
 RUN tar -xzvf /${GPF_PACKAGE} -C /code --strip-components=1
 RUN cd /code/dae && pip install . \
     && cd /code/wdae && pip install .

@@ -10,7 +10,6 @@ tar xzvf ${BUILDS}/${GPF_PACKAGE} \
     --strip-components=1
 
 docker build . -t "${GPF_DEV_DOCKER_IMAGE}" \
-    --build-arg WD=${WD} \
     --build-arg GPF_PACKAGE=${GPF_PACKAGE}
 
 
