@@ -34,7 +34,7 @@ fi
 
 export VERSION=${GPF_VERSION:-}
 if [ -z $VERSION ]; then
-    export VERSION=3.0.0a
+    export VERSION=3.0.0dev
 fi
 
 export BUILD=${BUILD_NUMBER:-}

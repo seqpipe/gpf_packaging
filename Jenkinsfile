@@ -34,7 +34,7 @@ pipeline {
         stage('clean') {
             steps {
                 sh '''
-                    rm -rf builds
+                    rm -rf builds/*
                 '''
             }
         }
