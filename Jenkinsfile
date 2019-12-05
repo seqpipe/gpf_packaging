@@ -14,8 +14,8 @@ pipeline {
         string(name: 'GPFJS_BRANCH', defaultValue: "master", description: 'gpfjs git branch to package')
     }    
     environment {
-        GPF_BRANCH="${GPF_BRANCH}"
-        GPFJS_BRANCH="${GPFJS_BRANCH}"
+        GPF_BRANCH="$params.GPF_BRANCH"
+        GPFJS_BRANCH="$params.GPFJS_BRANCH"
         GPF_VERSION="3.0.0dev"
     }
     stages {
