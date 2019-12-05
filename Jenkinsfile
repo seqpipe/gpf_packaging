@@ -14,8 +14,8 @@ pipeline {
         string(name: 'GPFJS_BRANCH', defaultValue: "master", description: 'gpfjs git branch to package')
     }    
     environment {
-        GPF_BRANCH="master"
-        GPFJS_BRANCH="master"
+        GPF_BRANCH="${GPF_BRANCH}"
+        GPFJS_BRANCH="${GPFJS_BRANCH}"
         GPF_VERSION="3.0.0dev"
     }
     stages {
@@ -42,6 +42,9 @@ pipeline {
         stage('gpf & gpfjs source') {
             steps {
                 sh '''
+                    echo "GPF_BRANCH=${GPF_BRANCH}"
+                    echo "GPFJS_BRANCH=${GPF_BRANCH}"
+
                     ./jenkins_source.sh
                 '''
             }
