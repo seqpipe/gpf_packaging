@@ -46,6 +46,6 @@ export VERSION=$VERSION$BUILD
 
 echo "VERSION: ${VERSION}"
 
-export GPF_PACKAGE="gpf-${PY_BRANCH}-${JS_BRANCH}-${VERSION}.tar.gz"
+export GPF_PACKAGE="gpf-${VERSION}.tar.gz"
 export GPF_DEV_DOCKER_IMAGE="seqpipe/gpf_dev:${BUILD}"
 

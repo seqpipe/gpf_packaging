@@ -4,3 +4,4 @@ builds/
 data/
 conda-environment.yml
 gpf-*.tar.gz
+gpfjs-dist-gpfjs.tar.gz
