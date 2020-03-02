@@ -24,23 +24,23 @@ sed -i \
     wdae/default_settings.py
 
 sed -i \
-    s/"\s*'NAME': 'wdae.sql',"/"'NAME': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae.sql'),"/g \
+    s/"\s*\"NAME\": \"wdae.sql\","/"'NAME': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae.sql'),"/g \
     wdae/default_settings.py
 
 sed -i \
-    s/"\s*'filename': 'wdae-api.log',"/"'filename': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae-api.log'),"/g \
+    s/"\s*\"filename\": \"wdae-api.log\","/"'filename': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae-api.log'),"/g \
     wdae/default_settings.py
 
 sed -i \
-    s/"\s*'filename': 'wdae-debug.log',"/"'filename': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae-debug.log'),"/g \
+    s/"\s*\"filename\": \"wdae-debug.log\","/"'filename': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae-debug.log'),"/g \
     wdae/default_settings.py
 
 sed -i \
-    s/"\s*'LOCATION': 'wdae_django_default.cache',"/"'LOCATION': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae_django_default.cache'),"/g \
+    s/"\s*\"LOCATION\": \"wdae_django_default.cache\","/"'LOCATION': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae_django_default.cache'),"/g \
     wdae/default_settings.py
 
 sed -i \
-    s/"\s*'LOCATION': 'wdae_django_pre.cache',"/"'LOCATION': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae_django_pre.cache'),"/g \
+    s/"\s*\"LOCATION\": \"wdae_django_pre.cache\","/"'LOCATION': os.path.join(os.environ.get('DAE_DB_DIR'), 'wdae\/wdae_django_pre.cache'),"/g \
     wdae/default_settings.py
 
 cd -
