@@ -10,7 +10,7 @@ RUN mkdir /builds
 ADD conda-environment.yml /
 
 RUN conda create \
-    -c conda-forge -c bioconda -c iossifovlab \
+    -c defaults -c conda-forge -c iossifovlab -c bioconda \
     -n gpf --file /conda-environment.yml
 
 # GPF ENV
