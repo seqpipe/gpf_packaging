@@ -11,8 +11,10 @@ tar xzvf ${BUILDS}/${GPF_PACKAGE} \
 
 docker pull seqpipe/seqpipe-node-base:latest
 
-docker build . -t "${GPF_DEV_DOCKER_IMAGE}" \
+docker build . -t "seqpipe/gpf_dev:${BUILD}" \
     --build-arg GPF_PACKAGE=${GPF_PACKAGE}
 
+docker build . -t "seqpipe/gpf_dev:latest" \
+    --build-arg GPF_PACKAGE=${GPF_PACKAGE}
 
 rm -f ${WD}/${GPF_PACKAGE}

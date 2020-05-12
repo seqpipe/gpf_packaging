@@ -92,6 +92,14 @@ pipeline {
             }
         }
 
+        stage('publish docker image') {
+            steps {
+                sh '''
+                    docker push seqpipe/gpf_dev:${BUILD_NUMBER}
+                    docker push seqpipe/gpf_dev:latest
+                '''
+            }
+        }
     }
     post {
         success {
