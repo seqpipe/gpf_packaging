@@ -16,7 +16,7 @@ pipeline {
     environment {
         GPF_BRANCH="$params.GPF_BRANCH"
         GPFJS_BRANCH="$params.GPFJS_BRANCH"
-        GPF_VERSION="3.0.0dev"
+        GPF_VERSION="3.1.0dev"
     }
     stages {
         stage ('Start') {
