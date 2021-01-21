@@ -20,10 +20,10 @@ pipeline {
     stages {
         stage ('Start') {
             steps {
-                slackSend (
-                    color: '#FFFF00',
-                    message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ${env.BUILD_URL}"
-                )
+                zulipSend(
+                    message: "Started build #${env.BUILD_NUMBER} of project ${env.JOB_NAME} (${env.BUILD_URL})",
+                    topic: "${env.JOB_NAME}")
+                }
             }
         }
 
@@ -101,19 +101,15 @@ pipeline {
         }
     }
     post {
+        always {
+            zulipNotification(
+                topic: "${env.JOB_NAME}"
+            )      
+        }
+
         success {
             archiveArtifacts artifacts: 'builds/*.tar.gz'
 
-            slackSend (
-                color: '#00FF00',
-                message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ${env.BUILD_URL}"
-            )
-        }
-        failure {
-            slackSend (
-                color: '#FF0000',
-                message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ${env.BUILD_URL}"
-            )
         }
     }
 }
