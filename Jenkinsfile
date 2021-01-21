@@ -23,8 +23,8 @@ pipeline {
                 zulipSend(
                     message: "Started build #${env.BUILD_NUMBER} of project ${env.JOB_NAME} (${env.BUILD_URL})",
                     topic: "${env.JOB_NAME}")
-                }
             }
+        
         }
 
                     // rm -rf gpf
@@ -109,7 +109,6 @@ pipeline {
 
         success {
             archiveArtifacts artifacts: 'builds/*.tar.gz'
-
         }
     }
 }
