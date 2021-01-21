@@ -8,6 +8,14 @@ fi
 
 echo "WD=$WD"
 
+if [ ! -d ${WD}/gpf ];
+then
+    export GPF_VERSION=3.3dev0
+else
+    export GPF_VERSION=$(cat ${WD}/gpf/VERSION)
+fi
+
+
 export BUILDS=${WD}/builds
 mkdir -p ${BUILDS}
 echo "BUILDS=${BUILDS}"
@@ -42,7 +50,7 @@ if [ -z $BUILD ]; then
     export BUILD=1
 fi
 
-export VERSION=$VERSION$BUILD
+export VERSION=$VERSION.$BUILD
 
 echo "VERSION: ${VERSION}"
 

@@ -17,6 +17,7 @@ cd gpf
 # clean previous gpfjs build
 rm -rf wdae/wdae/gpfjs/
 
+git pull
 git checkout -f ${PY_BRANCH}
 git pull
 
@@ -30,6 +31,7 @@ fi
 
 cd gpfjs
 
+git pull
 git checkout -f ${JS_BRANCH}
 git pull
 
